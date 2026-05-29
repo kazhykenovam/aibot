@@ -42,7 +42,7 @@ from telegram.ext import (
 load_dotenv()
 
 # ── CONFIG ──────────────────────────────────────────────────────────────────
-TELEGRAM_TOKEN  = os.environ["TELEGRAM_BOT_TOKEN"]
+TELEGRAM_TOKEN  = os.environ["TELEGRAM_BOT_TOKEN"] 
 ANTHROPIC_KEY   = os.environ["ANTHROPIC_API_KEY"]
 MODEL           = "claude-sonnet-4-20250514"
 
