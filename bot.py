@@ -42,8 +42,8 @@ from telegram.ext import (
 load_dotenv()
 
 # ── CONFIG ──────────────────────────────────────────────────────────────────
-TELEGRAM_TOKEN  = os.environ["8800972095:AAFmNRPSib2RL8HPdkrC-UIymOQEm2XXy6k"]
-ANTHROPIC_KEY   = os.environ["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"]
+TELEGRAM_TOKEN  = os.environ["TELEGRAM_BOT_TOKEN"]
+ANTHROPIC_KEY   = os.environ["ANTHROPIC_API_KEY"]
 MODEL           = "claude-sonnet-4-20250514"
 
 logging.basicConfig(
