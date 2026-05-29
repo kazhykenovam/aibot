@@ -21,6 +21,7 @@ import re
 from enum import Enum, auto
 
 import anthropic
+from anthropic import AsyncAnthropic
 from dotenv import load_dotenv
 from telegram import (
     BotCommand,
@@ -52,7 +53,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-client = anthropic.Anthropic(api_key=ANTHROPIC_KEY)
+client = AsyncAnthropic(api_key=ANTHROPIC_KEY)
 
 # ── CONVERSATION STATES ──────────────────────────────────────────────────────
 class State(Enum):
@@ -87,7 +88,7 @@ async def ask_claude(prompt: str, system: str = "") -> str:
     )
     if system:
         kwargs["system"] = system
-    msg = client.messages.create(**kwargs)
+    msg = await client.messages.create(**kwargs)
     return msg.content[0].text
 
 
